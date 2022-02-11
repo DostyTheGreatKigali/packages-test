@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<title>Laravel DataTable With Custom Filter - Tuts Make</title>
+<title>Yajra Datatables</title>
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
