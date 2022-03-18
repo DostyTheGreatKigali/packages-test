@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdc6106f592f546e41e54999907cfc29",
+    "content-hash": "bac06aed0accd9e4ec4fda01d3d006a7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -958,6 +958,50 @@
                 }
             ],
             "time": "2021-10-06T17:43:30+00:00"
+        },
+        {
+            "name": "kazeeem/laravel-flexible-countdown",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kazeeem/laravel-flexible-countdown.git",
+                "reference": "2ef9ff51769df98d06b5f62a6a031c858f75db8b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kazeeem/laravel-flexible-countdown/zipball/2ef9ff51769df98d06b5f62a6a031c858f75db8b",
+                "reference": "2ef9ff51769df98d06b5f62a6a031c858f75db8b",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kazeeem\\FlexibleCountdown\\FlexibleCountdownServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kazeeem\\FlexibleCountdown\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Kazeem Asifat",
+                    "email": "asifatkazeem@yahoo.com"
+                }
+            ],
+            "description": "This Laravel package allows you to create countdown timer on the go. It's very easy to use and understand and modify.",
+            "support": {
+                "issues": "https://github.com/Kazeeem/laravel-flexible-countdown/issues",
+                "source": "https://github.com/Kazeeem/laravel-flexible-countdown/tree/v1.0.1"
+            },
+            "time": "2021-11-10T09:15:59+00:00"
         },
         {
             "name": "laravel/framework",

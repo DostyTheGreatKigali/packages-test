@@ -14,15 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CountdownController;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('users', 'UsersController@index');
-Route::get('users-list', 'UsersController@usersList');
+// Route::get('users', 'UsersController@index');
+// Route::get('users-list', 'UsersController@usersList');
 
 Route::get('users', [UsersController::class, 'index']);
 Route::get('users-list', [UsersController::class, 'usersList']);
+
+Route::get('countdown', [CountdownController::class, 'index']);
+
+
+
 
