@@ -29,6 +29,10 @@ Route::get('users-list', [UsersController::class, 'usersList']);
 
 Route::get('countdown', [CountdownController::class, 'index']);
 
+Route::get('users-editable', [UsersController::class, 'index_for_editables']);
+
+Route::post('users-update', [UsersController::class, 'update']);
+
 
 
 

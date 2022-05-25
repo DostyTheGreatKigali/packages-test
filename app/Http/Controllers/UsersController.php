@@ -31,4 +31,29 @@ class UsersController extends Controller
         return datatables()->of($users)
             ->make(true);
     }
+
+    public function index_for_editables()
+    {
+        $users = User::paginate(10);
+        return view('editables.index_for_editables', [
+            'users' => $users
+        ]);
+    }
+    public function update(Request $request)
+    {
+        // return view('update');
+        if ($request->ajax()) {
+
+            User::find($request->pk)
+
+                ->update([
+
+                    $request->name => $request->value
+
+                ]);
+
+            return response()->json(['success' => true]);
+
+        }
+    }
 }
