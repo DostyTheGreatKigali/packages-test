@@ -11,44 +11,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header bg-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    Header
-                </div>
-                <div class="col-6 text-right">
-                    000 000 0000
-                </div>
-            </div>
-            <!--/row-->
-        </div>
-        <!--container-->
-    </div>
-    <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Brand</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar1">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
 
     <div class="container">
         <div class="row d-none">
@@ -89,6 +51,74 @@
             </div>
         </div>
         <!--/row-->
+
+        <div class="row">
+            <div class="col-mdd-12">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        {{-- <th scope="col">Handle</th> --}}
+                      </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($users as $user)
+                        <tr>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal"
+                                        data-name="{{ $user->name }}"
+                                        data-email="{{ $user->email }}"
+                                        data-supporterID="{{ $user->id }}"
+                                >
+                                    Add Comment
+
+                                </button>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+        {{-- Modal --}}
+        <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add Comment</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form >
+                    <div class="form-group">
+                      <label for="supporter_id" class="col-form-label">Supporter ID:</label>
+                      <input type="text" name="supporter_id" class="form-control" id="supporter_id">
+                    </div>
+                    <div class="form-group">
+                      <label for="phone" class="col-form-label">Phone:</label>
+                      <input type="text" name="phone" class="form-control" id="phone">
+                    </div>
+                    <div class="form-group">
+                      <label for="comment" class="col-form-label">Comment:</label>
+                      <textarea class="form-control" name="comment" id="comment"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Send message</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
     <!--container-->
 
@@ -106,14 +136,18 @@
        $(function() {
         console.log("Ready");
 
-        $('#exampleModal').on('show.bs.modal', function (event) {
+        $('#commentModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
-        var recipient = button.data('whatever') // Extract info from data-* attributes
+        var recipientName = button.data('name') // Extract info from data-* attributes
+        var recipientEmail = button.data('email') // Extract info from data-* attributes
+        var recipientID = button.data('supporterID') // Extract info from data-* attributes
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)
-        modal.find('.modal-title').text('New message to ' + recipient)
-        modal.find('.modal-body input').val(recipient)
+        modal.find('.modal-title').text('New message to ' + recipientID)
+        modal.find('.modal-body #supporter_id').val(recipientID)
+        modal.find('.modal-body #phone').val(recipientName)
+        modal.find('.modal-body #comment').val(recipientEmail)
         })
     });
    </script>
