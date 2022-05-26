@@ -1,0 +1,67 @@
+/* RECEIPT */
+.main_container {
+    border: 2px solid red;
+    border-radius: 15px;
+}
+
+.black_hr {
+  width: 90%;
+  color: #000000;
+  border: 1px solid #000000;
+  border-bottom-width: 1px solid #000000;
+  margin-top: 0.1rem;
+}
+
+.gold_hr {
+    width: 90%;
+    color: #ffd100;
+    border: 1px solid #ffd100;
+    border-bottom-width: 1px solid #ffd100;
+    margin-bottom: 0;
+}
+
+/* .receipt_row {
+    border: 2px solid green;
+    border-radius: 15px;
+} */
+#receipt_container {
+    border: 4px solid red;
+    border-radius: 15px;
+    /* width: 50% */
+    width: 400px;
+    height: 800px;
+}
+.receipt_container {
+    border: 2px solid green;
+    border-radius: 15px;
+    /* width: 50% */
+    width: 400px;
+    height: 800px;
+}
+.top_content_container {
+    border: 2px solid blue;
+    border-radius: 15px;
+}
+.values_container {
+    border: 2px solid pink;
+    border-radius: 15px;
+}
+.first_values_container {
+    border: 2px solid yellow;
+    border-radius: 15px;
+    font-family: "Tangerine", serif;
+
+}
+.second_values_container {
+    border: 2px solid black;
+    border-radius: 15px;
+}
+.bottom_container {
+    border: 2px solid violet;
+    border-radius: 15px;
+    margin-top: 200px;
+}
+
+#printableDiv {
+    display: none;
+}

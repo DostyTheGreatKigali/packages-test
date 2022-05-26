@@ -56,4 +56,12 @@ class UsersController extends Controller
 
         }
     }
+
+    public function postFromModal() {
+        $users = User::take(10)->get();
+        // dd($users);
+        return view('my_modal', [
+            'users' => $users
+        ]);
+    }
 }

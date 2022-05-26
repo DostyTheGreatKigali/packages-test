@@ -1,0 +1,244 @@
+
+/** ADD YOUR AWESOME CODES HERE **/
+
+/* MY STYLES */
+
+.btn_color {
+    background-color: #808000;
+    color:#fff;
+    font-weight: bolder;
+}
+.btn_color:hover {
+    background-color: #673147;
+    /* color:#808000; */
+}
+
+.btn_other_color {
+    background-color: #673147;
+    color:#fff;
+    font-weight: bolder;
+}
+
+.btn_other_color:hover {
+    background-color: #808000;
+    color: #fff
+    /* color:#808000; */
+}
+
+.btn_close_random_scripture {
+    background-color: #673147;
+    color: #ffdab9;
+    font-weight: bold;
+}
+
+.btn_close_random_scripture:hover {
+    background-color: #ffdab9;
+    color:#673147;
+
+}
+
+.btn_gift_color {
+    background-color: #ffdab9;
+    color:#673147;
+    font-weight: bolder;
+}
+.btn_gift_color:hover {
+    background-color: #fff;
+    color:#673147;
+    font-weight: bolder;
+}
+
+
+/* .guest_count {
+    left: 80%;
+    right: 0;
+    top: 0;
+    bottom: 80;
+    background-color: #673147;
+    height: 20vh;
+    position: absolute;
+} */
+
+/* OLD MODALS */
+.table {
+    display: table;
+    height:100%;
+    }
+    .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* COUNTDOWN */
+#clockdiv{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+#clockdiv > div{
+    padding: 5px;
+    /* padding-top: 10px; */
+    border-radius: 3px;
+    background: #808000;
+    /* background: #673147; */
+    display: inline-block;
+}
+
+#clockdiv div > span{
+    padding: 8px;
+    /* padding-top: 10px; */
+    border-radius: 3px;
+    background: #673147;
+    /* background: #61D2B4; */
+    /* background: #e20000; */
+    display: inline-block;
+    font-weight: 500;
+}
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+/* HEART ICON FAILED */
+#heart {
+position: relative;
+width: 100px;
+height: 90px;
+margin-top: 10px;
+}
+
+#heart::before, #heart::after {
+content: "";
+position: absolute;
+top: 0;
+width: 52px;
+height: 80px;
+border-radius: 50px 50px 0 0;
+background: red;
+}
+
+#heart::before {
+left: 50px;
+transform: rotate(-45deg);
+transform-origin: 0 100%;
+}
+
+#heart::after {
+left: 0;
+transform: rotate(45deg);
+transform-origin: 100% 100%;
+}
+
+.signup {
+background-repeat: no-repeat;
+background-size: cover;
+-moz-background-size: cover;
+-webkit-background-size: cover;
+-o-background-size: cover;
+-ms-background-size: cover;
+background-position: center center;
+/* padding: 115px 0; */
+padding: 2em;
+/* margin-top: 3em; */
+}
+
+/* FORM ALERT */
+
+.alert_text {
+background: #673147;
+}
+.swal-text {
+color: #fff;
+/* font-weight: bold; */
+font-size: 16px;
+}
+
+/* FOOTER */
+
+.footer_links_heading {
+    color: #ffdab9;
+}
+
+.footer_links_items {
+    color: #fff;
+    /* text-decoration: underline; */
+}
+.footer_links_items:hover {
+    color: #ffdab9;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+/* SOCIAL ICONS */
+
+.bootstrap_icons {
+font-size: 1.5em;
+/* color: #673147; */
+}
+
+/* .bootstrap_icons:hover {
+font-size: 1.5em;
+color: #808000;
+} */
+/* .fa-facebook:hover, .fa-instagram:hover, .fa-twitter:hover {
+background-color: #673147;
+} */
+
+.flex_items_row {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+.bi-telephone-fill {
+    color: #673147;
+}
+.bi-telephone-fill:hover {
+    color: #808000;
+}
+.bi-telephone {
+    color: #fff;
+}
+.bi-telephone:hover {
+    color: #ffdab9;
+}
+.bi-facebook {
+    color: #3b5998;
+}
+.bi-facebook:hover {
+    color: #008ad3;
+}
+.bi-instagram {
+    color: #F77737;
+}
+.bi-instagram:hover {
+    color: #FCAF45;
+}
+.bi-twitter {
+    color: #1DA1F2;
+}
+.bi-twitter:hover {
+    color: #657786;
+}
+.bi-whatsapp {
+    color: #25D366;
+}
+.bi-whatsapp:hover {
+    color: #128C7E;
+}
+/*
+#contact {
+    background: #808000;
+} */
+
+.gifts-box{
+	padding: 70px 0px;
+    background: #673147;
+    /* color: white; */
+}
+

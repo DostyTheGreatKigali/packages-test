@@ -33,6 +33,8 @@ Route::get('users-editable', [UsersController::class, 'index_for_editables']);
 
 Route::post('users-update', [UsersController::class, 'update']);
 
+Route::get('users-modal', [UsersController::class, 'postFromModal']);
+
 
 
 
