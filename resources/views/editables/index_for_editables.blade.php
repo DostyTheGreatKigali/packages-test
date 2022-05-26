@@ -114,4 +114,63 @@
 
 </script>
 
+{{-- https://www.tutsmake.com/laravel-8-ajax-post-form-data-with-validation/ --}}
+{{-- <script>
+    if ($("#contactUsForm").length > 0) {
+    $("#contactUsForm").validate({
+    rules: {
+    name: {
+    required: true,
+    maxlength: 50
+    },
+    email: {
+    required: true,
+    maxlength: 50,
+    email: true,
+    },
+    message: {
+    required: true,
+    maxlength: 300
+    },
+    },
+    messages: {
+    name: {
+    required: "Please enter name",
+    maxlength: "Your name maxlength should be 50 characters long."
+    },
+    email: {
+    required: "Please enter valid email",
+    email: "Please enter valid email",
+    maxlength: "The email name should less than or equal to 50 characters",
+    },
+    message: {
+    required: "Please enter message",
+    maxlength: "Your message name maxlength should be 300 characters long."
+    },
+    },
+    submitHandler: function(form) {
+    $.ajaxSetup({
+    headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+    });
+    $('#submit').html('Please Wait...');
+    $("#submit"). attr("disabled", true);
+
+    $.ajax({
+    url: "{{url('store')}}",
+    type: "POST",
+    data: $('#contactUsForm').serialize(),
+    success: function( response ) {
+    $('#submit').html('Submit');
+    $("#submit"). attr("disabled", false);
+    alert('Ajax form has been submitted successfully');
+    document.getElementById("contactUsForm").reset();
+    }
+    });
+    }
+    })
+    }
+    </script> --}}
+
 </html>
