@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CountdownController;
+use App\Http\Controllers\PaginationController;
 
 
 Route::get('/', function () {
@@ -39,6 +40,8 @@ Route::post('users-modal', [UsersController::class, 'postFromModal']);
 
 Route::get('users-custom-paginate', [UsersController::class, 'paginateData']);
 // Route::post('users-modal', [UsersController::class, 'postFromModal']);
+
+Route::get('pagination', [PaginationController::class, 'index']);
 
 
 
