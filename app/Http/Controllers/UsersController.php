@@ -75,23 +75,23 @@ class UsersController extends Controller
     }
     public function paginateData() {
         // $users = User::get();
-        $users = \DB::select("SELECT * FROM users");
-        // $rawData = DB::select("SELECT * FROM users");
-        // dd($users);
+        // $users = \DB::select("SELECT * FROM users");
+        // // $rawData = DB::select("SELECT * FROM users");
+        // // dd($users);
 
-        // $obj_raw_data = (object) $rawData;
-        // dd($obj_raw_data);
+        // // $obj_raw_data = (object) $rawData;
+        // // dd($obj_raw_data);
 
-        $count = count($users);
-        // $count = count($rawData);
-        // dd($count);
+        // $count = count($users);
+        // // $count = count($rawData);
+        // // dd($count);
 
-        // $pagination = new Pagination(['totalCount' => $count]);
+        // // $pagination = new Pagination(['totalCount' => $count]);
 
-        // Initialize a Data Pagination with previous count number
-        $pagination = new \yidas\data\Pagination([
-            'totalCount' => $count,
-        ]);
+        // // Initialize a Data Pagination with previous count number
+        // $pagination = new \yidas\data\Pagination([
+        //     'totalCount' => $count,
+        // ]);
 
         // Get range data for the current page
         // $users = $obj_raw_data
@@ -101,6 +101,26 @@ class UsersController extends Controller
 
 
         // dd($pagination);
+
+        // Get count of data set first
+        $sql = DB::select("SELECT * FROM users");
+        // dd($sql);
+        $count = count($sql);
+        // dd($count);
+
+        // Initialize a Data Pagination with previous count number
+        $pagination = new \yidas\data\Pagination([
+            'totalCount' => $count,
+        ]);
+
+        // Get range data for the current page
+        $sql = DB::select("SELECT * FROM `users` LIMIT {$pagination->offset}, {$pagination->limit}");
+        // dd($sql);
+        // $sth = $conn->prepare($sql);
+        // $sth->execute();
+        // $users = $sth->fetchAll();
+        $users = $sql;
+        // dd($users);
 
         return view('pagination.yidas', [
             'users' => $users,
