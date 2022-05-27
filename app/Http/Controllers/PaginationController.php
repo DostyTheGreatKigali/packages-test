@@ -47,12 +47,24 @@ class PaginationController extends Controller
         // var_dump($users);
 
         // Pages
+        $total = DB::select("SELECT FOUND_ROWS() AS total");
+        $total = json_encode($total[0]->total);
+        // echo $total;
+        $pages = $total / $per_page;
+        // echo ceil($pages);
         // $total = DB::select("SELECT FOUND_ROWS() AS total");
-        // echo ($total);
-        // var_dump($total);
+        // echo (json_encode($total));
+        // $total = (array) $total;
+        // $total = (object) $total;
+        //  ARRAY TO STRING
+        // https://www.geeksforgeeks.org/how-to-convert-array-to-string-in-php/
+        // var_dump(json_encode($total[0]->total));
 
         return view('pagination.vanilla', [
-            'users' => $users
+            'users' => $users,
+            'pages' => $pages,
+            'per_page' => $per_page,
+            'page' => $page,
         ]);
     }
 }
