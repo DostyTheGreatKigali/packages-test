@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Redirect,Response,DB,Config;
 use Datatables;
 use App\Models\User;
+// use Yii;
+// use yii\data\Pagination;
 
 class UsersController extends Controller
 {
@@ -69,6 +71,40 @@ class UsersController extends Controller
         // dd($users);
         return view('my_modal', [
             'users' => $users
+        ]);
+    }
+    public function paginateData() {
+        // $users = User::get();
+        $users = \DB::select("SELECT * FROM users");
+        // $rawData = DB::select("SELECT * FROM users");
+        // dd($users);
+
+        // $obj_raw_data = (object) $rawData;
+        // dd($obj_raw_data);
+
+        $count = count($users);
+        // $count = count($rawData);
+        // dd($count);
+
+        // $pagination = new Pagination(['totalCount' => $count]);
+
+        // Initialize a Data Pagination with previous count number
+        $pagination = new \yidas\data\Pagination([
+            'totalCount' => $count,
+        ]);
+
+        // Get range data for the current page
+        // $users = $obj_raw_data
+        // ->offset($pagination->offset)
+        // ->limit($pagination->limit)
+        // ->get()->result_array();
+
+
+        // dd($pagination);
+
+        return view('pagination.yidas', [
+            'users' => $users,
+            'pagination' => $pagination
         ]);
     }
 }

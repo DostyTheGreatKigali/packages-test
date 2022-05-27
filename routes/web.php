@@ -37,5 +37,9 @@ Route::get('users-modal', [UsersController::class, 'getModalWithForm']);
 Route::post('users-modal', [UsersController::class, 'postFromModal']);
 
 
+Route::get('users-custom-paginate', [UsersController::class, 'paginateData']);
+// Route::post('users-modal', [UsersController::class, 'postFromModal']);
+
+
 
 

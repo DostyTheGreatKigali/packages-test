@@ -69,7 +69,7 @@
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>
+                            {{-- <td>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal"
                                         data-name="{{ $user->name }}"
                                         data-email="{{ $user->email }}"
@@ -78,11 +78,16 @@
                                     Add Comment
 
                                 </button>
-                            </td>
+                            </td> --}}
                         </tr>
                         @endforeach
                     </tbody>
                   </table>
+                  <div>
+                    <?=\yidas\widgets\Pagination::widget([
+                        'pagination' => $pagination
+                    ])?>
+                    </div>
             </div>
         </div>
 
@@ -133,22 +138,22 @@
 
    <!-- Custom Script -->
    <script>
-       $(function() {
-        console.log("Ready");
+    //    $(function() {
+    //     console.log("Ready");
 
-        $('#commentModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var recipientName = button.data('name') // Extract info from data-* attributes
-        var recipientEmail = button.data('email') // Extract info from data-* attributes
-        var recipientID = button.data('supporter') // Extract info from data-* attributes
-        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-        var modal = $(this)
-        modal.find('.modal-title').text('New message to ' + recipientID)
-        modal.find('.modal-body #supporter_id').val(recipientID)
-        modal.find('.modal-body #phone').val(recipientName)
-        modal.find('.modal-body #comment').val(recipientEmail)
-        })
+    //     $('#commentModal').on('show.bs.modal', function (event) {
+    //     var button = $(event.relatedTarget) // Button that triggered the modal
+    //     var recipientName = button.data('name') // Extract info from data-* attributes
+    //     var recipientEmail = button.data('email') // Extract info from data-* attributes
+    //     var recipientID = button.data('supporter') // Extract info from data-* attributes
+    //     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    //     // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    //     var modal = $(this)
+    //     modal.find('.modal-title').text('New message to ' + recipientID)
+    //     modal.find('.modal-body #supporter_id').val(recipientID)
+    //     modal.find('.modal-body #phone').val(recipientName)
+    //     modal.find('.modal-body #comment').val(recipientEmail)
+    //     })
     });
    </script>
 </body>

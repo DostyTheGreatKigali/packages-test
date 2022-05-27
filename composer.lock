@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bac06aed0accd9e4ec4fda01d3d006a7",
+    "content-hash": "4b3d90933650cc5e2cc18ecb1eaa318c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5576,6 +5576,47 @@
                 }
             ],
             "time": "2022-01-18T01:13:47+00:00"
+        },
+        {
+            "name": "yidas/pagination",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yidas/php-pagination.git",
+                "reference": "d6b95bbab65e75b69517f755df3e23f93b4e0e78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yidas/php-pagination/zipball/d6b95bbab65e75b69517f755df3e23f93b4e0e78",
+                "reference": "d6b95bbab65e75b69517f755df3e23f93b4e0e78",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "yidas\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP Paginator with Pager Widget (pure PHP, CI, Yii, Laravel support)",
+            "homepage": "https://github.com/yidas/php-pagination",
+            "keywords": [
+                "codeigniter",
+                "linkpager",
+                "pagination",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/yidas/php-pagination/issues",
+                "source": "https://github.com/yidas/php-pagination"
+            },
+            "time": "2021-09-06T07:25:31+00:00"
         }
     ],
     "packages-dev": [
